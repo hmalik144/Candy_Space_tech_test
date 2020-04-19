@@ -1,7 +1,8 @@
-package com.example.h_mal.candyspace
+package com.example.h_mal.candyspace.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.h_mal.candyspace.R
 import com.example.h_mal.candyspace.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {

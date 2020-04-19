@@ -8,7 +8,7 @@ class Repository(
     private val api: ApiClass
 ): ResponseUnwrap() {
 
-    suspend fun sdasda(username: String): User {
+    suspend fun getUsers(username: String): User {
         return apiRequest { api.getUsersFromApi(username) }
     }
 }
