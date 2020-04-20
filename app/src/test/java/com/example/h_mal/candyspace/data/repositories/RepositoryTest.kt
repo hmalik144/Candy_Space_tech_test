@@ -1,8 +1,7 @@
 package com.example.h_mal.candyspace.data.repositories
 
 import com.example.h_mal.candyspace.data.api.ApiClass
-import com.example.h_mal.candyspace.data.api.ApiResponse
-import com.example.h_mal.candyspace.data.api.User
+import com.example.h_mal.candyspace.data.api.model.ApiResponse
 import kotlinx.coroutines.runBlocking
 import okhttp3.MediaType
 import okhttp3.ResponseBody

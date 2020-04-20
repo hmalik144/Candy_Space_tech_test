@@ -1,7 +1,7 @@
-package com.example.h_mal.candyspace.ui.main
+package com.example.h_mal.candyspace.ui.user
 
 import com.example.h_mal.candyspace.R
-import com.example.h_mal.candyspace.data.api.User
+import com.example.h_mal.candyspace.data.api.model.User
 import com.example.h_mal.candyspace.databinding.ListItemLayoutBinding
 import com.xwray.groupie.databinding.BindableItem
 

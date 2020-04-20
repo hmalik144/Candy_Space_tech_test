@@ -1,15 +1,13 @@
-package com.example.h_mal.candyspace.ui.main
+package com.example.h_mal.candyspace.ui.user
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 
 import com.example.h_mal.candyspace.R
 import com.example.h_mal.candyspace.databinding.FragmentUserProfileBinding
-import com.example.h_mal.candyspace.ui.MainActivity
-import com.example.h_mal.candyspace.ui.MainActivity.Companion.viewModel
+import com.example.h_mal.candyspace.ui.main.MainActivity.Companion.viewModel
 import com.squareup.picasso.Picasso
 
 /**
@@ -20,7 +18,8 @@ import com.squareup.picasso.Picasso
 class UserProfileFragment : Fragment() {
 
     companion object {
-        fun newInstance() = UserProfileFragment()
+        fun newInstance() =
+            UserProfileFragment()
     }
 
     lateinit var binding: FragmentUserProfileBinding
@@ -29,13 +28,13 @@ class UserProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        activity?.actionBar?.setHomeButtonEnabled(true)
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment into data binding
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_profile, container, false)
 
         return binding.root
     }
 
+    //Update the data for viewbinding onResume as data would have changed when selecting a new user
     override fun onResume() {
         super.onResume()
         viewModel.currentUserLiveData?.let {

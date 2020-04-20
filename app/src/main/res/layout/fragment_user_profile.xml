@@ -2,14 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.main.UserProfileFragment">
+    tools:context=".ui.user.UserProfileFragment">
 
     <data>
         <import type="com.example.h_mal.candyspace.R"/>
         <import type="com.example.h_mal.candyspace.utils.ConverterUtil"/>
         <variable
             name="user"
-            type="com.example.h_mal.candyspace.data.api.User" />
+            type="com.example.h_mal.candyspace.data.api.model.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
