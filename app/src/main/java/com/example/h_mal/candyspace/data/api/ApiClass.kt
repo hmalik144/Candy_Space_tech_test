@@ -13,7 +13,7 @@ import retrofit2.http.Query
 interface ApiClass {
 
     @GET("users?")
-    suspend fun getUsersFromApi(@Query("inname") inname: String): Response<User>
+    suspend fun getUsersFromApi(@Query("inname") inname: String): Response<ApiResponse>
 
     companion object{
         operator fun invoke(

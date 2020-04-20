@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.UserProfileFragment">
+
+    <data>
+        <import type="com.example.h_mal.candyspace.R"/>
+        <import type="com.example.h_mal.candyspace.utils.ConverterUtil"/>
+        <variable
+            name="user"
+            type="com.example.h_mal.candyspace.data.api.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="48dp"
+            android:src="@mipmap/ic_launcher"
+            tools:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/username_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintRight_toLeftOf="@id/divider"
+            android:layout_marginTop="12dp"
+            android:text="Username:" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:text="Username1234"
+            android:text="@{user.displayName}"
+            app:layout_constraintLeft_toRightOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+        <TextView
+            android:id="@+id/reputation_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/username_label"
+            app:layout_constraintRight_toLeftOf="@id/divider"
+            android:layout_marginTop="12dp"
+            android:text="Reputation:" />
+
+        <TextView
+            android:id="@+id/reputation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:text="1548252"
+            android:text="@{user.reputation.toString()}"
+            app:layout_constraintLeft_toRightOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
+
+        <TextView
+            android:id="@+id/badges_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/reputation_label"
+            app:layout_constraintRight_toLeftOf="@id/divider"
+            android:layout_marginTop="12dp"
+            android:text="Bagdes:" />
+
+        <TextView
+            android:id="@+id/badges_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Gold - "
+            app:layout_constraintLeft_toRightOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/reputation" />
+
+        <TextView
+            android:id="@+id/gold_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3554"
+            android:text="@{user.badgeCounts.gold.toString()}"
+            app:layout_constraintLeft_toRightOf="@id/badges_gold"
+            app:layout_constraintTop_toTopOf="@id/badges_gold"/>
+
+        <TextView
+            android:id="@+id/badges_silver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Silver - "
+            app:layout_constraintLeft_toRightOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/badges_gold" />
+
+        <TextView
+            android:id="@+id/silver_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3554"
+            android:text="@{user.badgeCounts.silver.toString()}"
+            app:layout_constraintLeft_toRightOf="@id/badges_silver"
+            app:layout_constraintTop_toTopOf="@id/badges_silver"/>
+
+        <TextView
+            android:id="@+id/badges_bronze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Bronze - "
+            app:layout_constraintLeft_toRightOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/badges_silver" />
+
+        <TextView
+            android:id="@+id/bronze_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3554"
+            android:text="@{user.badgeCounts.bronze.toString()}"
+            app:layout_constraintLeft_toRightOf="@id/badges_bronze"
+            app:layout_constraintTop_toTopOf="@id/badges_bronze"/>
+
+        <TextView
+            android:id="@+id/date_joined_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/badges_bronze"
+            app:layout_constraintRight_toLeftOf="@id/divider"
+            android:layout_marginTop="12dp"
+            android:text="Date Joined:" />
+
+        <TextView
+            android:id="@+id/date_joined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:text="31/01/2019"
+            android:text="@{ConverterUtil.epochToData(user.creationDate)}"
+            app:layout_constraintLeft_toRightOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/badges_bronze" />
+
+        <Space
+            android:id="@+id/divider"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

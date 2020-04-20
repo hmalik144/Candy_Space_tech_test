@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 
 class User {
+    @SerializedName("badge_counts")
+    @Expose
+    var badgeCounts: BadgeCounts? = null
     @SerializedName("last_modified_date")
     @Expose
     var lastModifiedDate: Int? = null

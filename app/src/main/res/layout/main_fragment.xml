@@ -23,11 +23,16 @@
             android:layout_margin="4dp"
             android:orientation="horizontal"
             android:id="@+id/container">
+
             <EditText
                 android:id="@+id/search_bar"
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:text="@={viewmodel.searchString}" />
 
             <Button
                 android:id="@+id/submit"
@@ -36,6 +41,7 @@
                 app:layout_constraintStart_toEndOf="@id/search_bar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{viewmodel::submit}"
                 android:text="Submit"/>
         </LinearLayout>
 

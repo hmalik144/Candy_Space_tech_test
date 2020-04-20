@@ -1,9 +1,8 @@
 package com.example.h_mal.candyspace.data.repositories
 
-import android.util.Log
 import com.example.h_mal.candyspace.data.api.ApiClass
+import com.example.h_mal.candyspace.data.api.ApiResponse
 import com.example.h_mal.candyspace.data.api.User
-import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
 import okhttp3.MediaType
 import okhttp3.ResponseBody
@@ -11,7 +10,6 @@ import org.junit.Before
 
 import org.junit.Assert.*
 import org.junit.Test
-import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.mock
@@ -33,8 +31,8 @@ class RepositoryTest {
 
     @Test
     fun fetchUserFromApi_positiveResponse() = runBlocking {
-        val mockUser = mock(User::class.java)
-        val mockResponse = Response.success(mockUser)
+        val mockApiResponse = mock(ApiResponse::class.java)
+        val mockResponse = Response.success(mockApiResponse)
 
         Mockito.`when`(api.getUsersFromApi("12345")).thenReturn(
             mockResponse
@@ -43,12 +41,12 @@ class RepositoryTest {
         val getUser = repository.getUsers("12345")
 
         assertNotNull(getUser)
-        assertEquals(mockUser, getUser)
+        assertEquals(mockApiResponse, getUser)
     }
 
     @Test
     fun fetchUserFromApi_negativeResponse() = runBlocking {
-        val mockResponse = Response.error<User>(403,
+        val mockResponse = Response.error<ApiResponse>(403,
             ResponseBody.create(
                 MediaType.parse("application/json"),
                 "{\"key\":[\"somestuff\"]}"
