@@ -13,9 +13,7 @@ git clone git@github.com:hmalik144/Candy_Space_tech_test.git
 
 ## Features
 
- - Search the trasport api for current road status
- - get Road Id, Road Status and Description from the search
- - Data binding into the view model to hold data even after the activity has been destroyed by android
+ - Data binding to control views from view models and objects
  - SOLID coding priciples applied to keep code clean and easy to read 
 
 ## Architectural Pattern
