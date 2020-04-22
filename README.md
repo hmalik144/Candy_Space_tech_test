@@ -2,7 +2,7 @@
 
 ## Requirements
 
- - Minimum android version 23
+ - Minimum android version 24
  - Permissions : Internet, Network state
 
 ## Installation
