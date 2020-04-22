@@ -25,6 +25,7 @@ MVVM - Model View Viewmodel
 * [AndroidX](https://developer.android.com/jetpack)
 
 ## UI test
+ - AppUITest.kt
 
 ### Unit test
  - RepositoryTest.kt
