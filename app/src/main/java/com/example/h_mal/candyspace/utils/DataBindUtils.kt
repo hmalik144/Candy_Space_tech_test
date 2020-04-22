@@ -1,6 +1,5 @@
 package com.example.h_mal.candyspace.utils
 
-import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.*
 

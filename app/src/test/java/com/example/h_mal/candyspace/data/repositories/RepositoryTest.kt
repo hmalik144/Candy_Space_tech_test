@@ -5,9 +5,9 @@ import com.example.h_mal.candyspace.data.api.model.ApiResponse
 import kotlinx.coroutines.runBlocking
 import okhttp3.MediaType
 import okhttp3.ResponseBody
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Before
-
-import org.junit.Assert.*
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito

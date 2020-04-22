@@ -1,14 +1,12 @@
 package com.example.h_mal.candyspace.ui.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.h_mal.candyspace.data.api.ApiClass
 import com.example.h_mal.candyspace.data.api.model.ApiResponse
 import com.example.h_mal.candyspace.data.api.model.User
 import com.example.h_mal.candyspace.data.repositories.Repository
 import kotlinx.coroutines.runBlocking
+import org.junit.Assert.assertEquals
 import org.junit.Before
-
-import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
@@ -16,7 +14,6 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.mock
 import org.mockito.MockitoAnnotations
-import retrofit2.Response
 import java.io.IOException
 
 class MainViewModelTest {

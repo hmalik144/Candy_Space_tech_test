@@ -1,8 +1,8 @@
 package com.example.h_mal.candyspace.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.h_mal.candyspace.R
 import com.example.h_mal.candyspace.ui.home.MainFragment
@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity(), KodeinAware, CompletionListener {
         setContentView(R.layout.main_activity)
 
         //setup home button for back navigation
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
-        supportActionBar?.setDisplayShowHomeEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         //retrieve viewmodel from viewmodel factory
         viewModel = ViewModelProvider(this, factory).get(MainViewModel::class.java)
